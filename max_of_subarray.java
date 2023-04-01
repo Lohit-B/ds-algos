@@ -1,5 +1,6 @@
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+//For a given array and an integer K, find the max number in each contiguous subarray of length K
 class MaxOfSubArray {
 	static ArrayList<Integer> findMaxOfSubArray(int[] arr, int k) {
 		int n = arr.length;
