@@ -9,10 +9,9 @@ class MaxOfSubArray {
 		if(arr.length == 0) {
 			return answer;
 		}
-		deque.addLast(0);
-		for(int i=1; i<k; i++) {
+		for(int i=0; i<k; i++) {
 			Integer peek_last = deque.peekLast();
-			while(peek_last != null && arr[peek_last] < arr[i]) {
+			while(peek_last != null && arr[peek_last] <= arr[i]) {
 				deque.pollLast();
 				peek_last = deque.peekLast();
 			}
@@ -26,7 +25,7 @@ class MaxOfSubArray {
 				peek_first = deque.peekFirst();
 			}
 			Integer peek_last = deque.peekLast();
-			while(peek_last != null && arr[deque.peekLast()] < arr[end]) {
+			while(peek_last != null && arr[peek_last] <= arr[end]) {
 				deque.pollLast();
 				peek_last = deque.peekLast();
 			}
