@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 class MaximumMeetings {
     private static class MeetingSlot {
-        public Integer start, end;
-        public MeetingSlot(int start, int end) {
+        Integer start, end;
+        MeetingSlot(int start, int end) {
             this.start = start;
             this.end = end;
         }

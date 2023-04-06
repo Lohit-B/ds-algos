@@ -6,18 +6,17 @@ class LongestPrefixSuffix {
             return 0;
         }
         char last_char = input_string.charAt(string_len-1);
-        String max_possible_match = "";
+        int start_suffix = 0;
         for(int i=string_len-2; i>=0; i--) {
             char current_char = input_string.charAt(i);
             if(last_char == current_char) {
-                max_possible_match = input_string.substring(string_len-i-1,string_len);
+                start_suffix = string_len-i-1;
                 break;
             }
         }
         int start_prefix = 0;
-        int start_suffix = 0;
-        while (start_suffix < max_possible_match.length()) {
-            char char_suffix = max_possible_match.charAt(start_suffix);
+        while (start_suffix < string_len) {
+            char char_suffix = input_string.charAt(start_suffix);
             char char_prefix = input_string.charAt(start_prefix);
             if(char_suffix != char_prefix) {
                 start_prefix = 0;
@@ -30,7 +29,7 @@ class LongestPrefixSuffix {
         return start_prefix;
     }
     public static void main(String[] args) {
-        String input = "absccsrsa";
+        String input = "abcdbab";
         System.out.println(findLongestSufixPrefix(input));
     }
 
