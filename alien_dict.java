@@ -71,9 +71,6 @@ class AlienDict {
         //validating
         for(Map.Entry<Character, HashSet<Character>> entry: map.entrySet()) {
             Character key = entry.getKey();
-            System.out.print(key);
-            System.out.print(entry.getValue());
-            System.out.println("++++++++++++++");
             for(Character c :entry.getValue()) {
                 if(c==key) {
                     return -1;
